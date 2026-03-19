@@ -30,7 +30,7 @@ go_no_go:
   - gate: "Q3 2026"
     condition: "NAGL replacement infrastructure operational (hard dependency); if delayed, this project cannot proceed"
   - gate: "Q1 2027"
-    condition: "New charge model shows measurable and statistically significant improvement in independent benchmarks; if improvement is marginal (<5% HFE MAE reduction), reassess training data and model architecture before committing to full force field refit"
+    condition: "New charge model shows measurable and statistically significant improvement in independent benchmarks"
 dependencies:
   - nagl-replacement
 enables: []
