@@ -68,10 +68,10 @@ def parse_project(path: Path) -> dict:
 
     fte = fm.get("fte", {})
     fte_normalized = {
-        "infrastructure": int(fte.get("infrastructure", 0)),
-        "science_code": int(fte.get("science_code", 0)),
-        "science_exp": int(fte.get("science_exp", 0)),
-        "other": int(fte.get("other", 0)),
+        "infrastructure": float(fte.get("infrastructure", 0)),
+        "science_code": float(fte.get("science_code", 0)),
+        "science_exp": float(fte.get("science_exp", 0)),
+        "other": float(fte.get("other", 0)),
     }
 
     # Convert markdown body to HTML

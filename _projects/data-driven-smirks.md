@@ -27,8 +27,6 @@ metrics:
   - "Force field fit with data-driven SMIRKS matches or exceeds Sage on behcnmarks"
   - "SMIRKS generation process is fully automated, version-controlled, and reproducible"
 go_no_go:
-  - gate: "Q3 2026"
-    condition: "smee/descent pipeline operational (hard dependency) AND SMIRKS generation algorithm demonstrably produces chemically valid patterns; if neither is ready, defer to next cycle"
   - gate: "Q1 2027"
     condition: "Data-driven SMIRKS force field benchmarks show performance competitive with Sage"
 dependencies:

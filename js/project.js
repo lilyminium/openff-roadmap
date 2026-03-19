@@ -122,7 +122,7 @@ function renderGoalsAndFTE(p) {
       ${fteRow("Science (new code)", code, maxVal, "science-code")}
       ${fteRow("Science (experiments)", exp, maxVal, "science-exp")}
       ${fteRow("Infrastructure (new and ongoing)", infra, maxVal, "infrastructure")}
-      ${other > 0 ? fteRow("Other (admin / travel)", other, maxVal, "other") : ""}
+      ${other > 0 ? fteRow("Project management", other, maxVal, "other") : ""}
       <div class="fte-total">
         <span class="fte-total-label">Total estimated effort</span>
         <span class="fte-total-value">${total} mo</span>

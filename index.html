@@ -60,10 +60,10 @@
           </div>
           <div>
             <div style="font-size:1.25rem; font-weight:700; line-height:1.1;">0.5</div>
-            <div class="text-xs text-muted">Other FTE</div>
+            <div class="text-xs text-muted">Project management FTE</div>
           </div>
           <div>
-            <div style="font-size:1.25rem; font-weight:700; line-height:1.1;">48</div>
+            <div style="font-size:1.25rem; font-weight:700; line-height:1.1;">45</div>
             <div class="text-xs text-muted">Total FTE-months</div>
           </div>
         </div>
@@ -83,7 +83,7 @@
         <li><strong>Solid border</strong> = recommended &nbsp;·&nbsp; <strong>Dashed border</strong> = alternative proposal</li>
         <li><strong>Arrows</strong> show dependencies: A → B means B requires A to be done first</li>
         <li>Person icons (👤) indicate effort: S &lt;1 month &nbsp;·&nbsp; M = 1–5 months &nbsp;·&nbsp; L = 6+ months</li>
-        <li>Clock 🕐 shows the latest milestone date &nbsp;·&nbsp; Click any node to view full project details</li>
+        <li>Click any node to view full project details including timeline, metrics, and go/no-go gates</li>
       </ul>
     </div>
 
@@ -201,7 +201,6 @@
           </div>
           <div style="display:flex; gap:0.5rem; align-items:center;">
             ${fte ? (() => { const s = fte < 1 ? "S" : fte <= 4 ? "M" : "L"; const icons = "👤".repeat(fte < 1 ? 1 : fte <= 4 ? 2 : 3); return `<span class="text-xs text-muted" style="font-family:var(--font-mono);">${icons} ${s}</span>`; })() : ""}
-            ${date ? `<span class="text-xs text-muted" style="font-family:var(--font-mono);">🕐 ${date}</span>` : ""}
           </div>
         </div>
       </a>

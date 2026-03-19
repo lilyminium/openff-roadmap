@@ -24,8 +24,6 @@ metrics:
   - "NMR order parameters for lipid tails"
   - "No systematic decrease with Sage 2.x small molecule parameters"
 go_no_go:
-  - gate: "Q3 2026"
-    condition: "Shirts lab and collaborators deliver initial lipid force field of sufficient quality for taking through the release pipeline"
 dependencies: []
 enables: []
 ---

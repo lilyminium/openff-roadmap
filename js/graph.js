@@ -385,7 +385,7 @@ function showTooltip(event, p) {
       <tr><td>Science (code)</td><td>${f.science_code   || 0} mo</td></tr>
       <tr><td>Science (exp.)</td><td>${f.science_exp    || 0} mo</td></tr>
       <tr><td>Infrastructure</td><td>${f.infrastructure || 0} mo</td></tr>
-      ${f.other ? `<tr><td>Other</td><td>${f.other} mo</td></tr>` : ""}
+      ${f.other ? `<tr><td>Project management</td><td>${f.other} mo</td></tr>` : ""}
       <tr><td><strong>Total</strong></td><td><strong>${total} mo</strong></td></tr>
     </table>
     <a class="tooltip-link" href="${projectURL(p.id)}">View details →</a>`;

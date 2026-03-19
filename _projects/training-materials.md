@@ -15,7 +15,7 @@ timeline:
     date: "Q4 2026"
 metrics:
   - "All priority notebooks run correctly in Marimo from a fresh environment without modification"
-go_no_go:
+go_no_go: []
 dependencies: []
 enables: []
 ---
@@ -29,6 +29,7 @@ enables: []
 Jupyter notebooks have a lot of flaws; they include hidden state and are hard to diff on GitHub.
 
 Marimo is a reactive notebook format:
+
 - **Reactive execution**: Marimo builds a directed acyclic graph (DAG) of cell dependencies. When a variable changes, downstream cells recompute automatically. There is no hidden state — the notebook is always in a consistent, reproducible state.
 - **Pure Python storage**: Marimo notebooks are stored as `.py` files, not JSON. This makes them diffable, versionable with git, and executable as scripts without a notebook server.
 - **Deployable as apps**: A Marimo notebook can be served as an interactive web app (e.g. a parameterisation demo with live molecule input) with no additional code.
