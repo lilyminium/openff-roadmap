@@ -41,6 +41,7 @@ enables: []
 ## Potential Format (RDKit UGM Model)
 
 The RDKit UGM has run successfully for over a decade and provides a good template:
+
 - **Day 1–2**: Talks (20–30 min slots) and lightning talks from OpenFF team members and invited external speakers; poster session; community social
 - **Day 3**: Hackathon — participants self-organise into small groups around proposed topics; groups present outcomes at the end of the day
 - **Remote access**: Live-streamed over video call for remote participants (typically 40–60 remote attendees at RDKit UGM); Discord or Slack for back-channel interaction
