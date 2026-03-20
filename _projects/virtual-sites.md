@@ -8,7 +8,7 @@ stages:
   - fitting
   - benchmarking
   - release
-summary: "Develop and release a SMIRNOFF force field incorporating virtual sites to better capture sigma holes, lone pairs on nitrogen, and other anisotropic electrostatic features."
+summary: "Develop and release a SMIRNOFF force field incorporating virtual sites to better capture sigma holes, lone pairs on nitrogen, and other anisotropic electrostatic features. This has been tried previously, but we have since made substantial updates to our workflows and found errors in the data we were training with."
 fte:
   infrastructure: 0.5
   science_code: 1

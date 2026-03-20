@@ -35,11 +35,9 @@ enables: []
 
 ## Goals
 
-- Perform systematic error analysis on the performance of current Sage 2.x parameters for alcohols and amines, specifically targeting hydration free energies and conformational torsion profiles
-- Identify the specific SMIRKS patterns, torsion dihedral types, and charge model assignments responsible for the largest errors
-- Generate targeted QM datasets to fill identified gaps: high-level torsion scans for under-represented OH and NH dihedral types, and extended ESP datasets for partial charge improvement
-- Refit the relevant SMIRNOFF torsion and Lennard-Jones parameters using the augmented dataset
-- Release as an update to the Sage force field line
+- Perform systematic error analysis on the performance of current Sage 2.x parameters for alcohols and amines, specifically targeting hydration free energies and physical properties
+- Re-fit relevant LJ and valence parameters, splitting as necessary.
+- Determine general solution, such as re-leasing with updated BCCs or retraining AshGC
 
 ## Benefits
 

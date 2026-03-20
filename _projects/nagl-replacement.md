@@ -22,7 +22,7 @@ metrics:
   - "Training pipeline runs without DGL; all GNN operations use PyTorch Geometric or equivalent actively maintained library"
 go_no_go:
   - gate: "Q3 2026"
-    condition: "Assess progress of collaboration with academic groups on continuous typing library. If not ready for use with next-gen charge model, update own NAGL library instead."
+    condition: "A collaboration is underway to build a new modular typing library for general continuous typing. If this becomes ready in time, port AshGC over to this new library for training and inference. If not, update NAGL instead."
 dependencies: []
 enables:
   - charge-model

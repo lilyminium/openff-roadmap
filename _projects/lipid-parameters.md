@@ -20,8 +20,7 @@ timeline:
   - milestone: "Benchmarks"
     date: "Q1 2027"
 metrics:
-  - "Lipid bilayer structural properties (area per lipid, bilayer thickness) "
-  - "NMR order parameters for lipid tails"
+  - "Lipid bilayer structural properties (area per lipid, bilayer thickness)"
   - "No systematic decrease with Sage 2.x small molecule parameters"
 go_no_go:
 dependencies: []

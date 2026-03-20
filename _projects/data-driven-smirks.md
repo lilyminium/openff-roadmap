@@ -9,7 +9,7 @@ stages:
   - fitting
   - benchmarking
   - release
-summary: "Develop a data-driven approach to generate SMIRKS atom-typing patterns, moving beyond hand-crafted rules to a more systematic typing scheme."
+summary: "Develop a data-driven approach to generate SMIRKS atom-typing patterns, moving beyond hand-crafted rules to a more systematic typing scheme. Current experiments suggest that adding thousands of specific terms, especially torsions, substantially improves the performance of Sage on small molecule benchmarks and does not systematically decrease performance on physical property benchmarks."
 fte:
   infrastructure: 0
   science_code: 1
