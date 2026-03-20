@@ -11,15 +11,11 @@ fte:
   science_code: 4
   science_exp: 2
 timeline:
-  - milestone: "Production force field fits migrated to smee/descent; ForceBalance retired"
+  - milestone: "Production force field fits migrated to smee/descent; retire workflows with ForceBalance"
     date: "Q3 2026"
 metrics:
   - "Valence fitting wall-clock time ≤48 GPU hours on standard hardware"
   - "vdW fitting wall-clock time not increased vs ForceBalance baseline on equivalent hardware"
-  - "Co-optimisation of valence and vdW parameters demonstrated end-to-end on at least one test force field"
-  - "Desired fitting targets implemented"
-  - "Regularisation, etc., implemented"
-  - "Checkpointing implemented"
 go_no_go:
 dependencies: []
 enables:
@@ -36,6 +32,9 @@ enables:
 - Migrate all active production force field fits from ForceBalance to smee/descent and retire ForceBalance as a hard dependency
 - Provide a stable, well-documented Python API that downstream projects (surrogate modelling, water model, virtual sites, data-driven SMIRKS) can build on
 - Tutorials for community members
+- Implement desired fitting targets
+- Implement regularisation
+- Implement checkpointing
 
 ## Benefits
 

@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenFF Roadmap 2026–2027</title>
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/graph.css">
   <!-- Apply theme before paint to avoid flash -->
   <script>
     (function(){
@@ -71,6 +70,11 @@
       </div>
     </div>
 
+    <!-- Feedback link -->
+    <div style="margin-bottom:1.25rem; font-size:0.85rem;">
+      📝 <a href="https://forms.gle/placeholder" style="color:var(--color-primary);">Share your feedback on this roadmap</a> (Google Form)
+    </div>
+
     <!-- How to read — full width, 2-column list -->
     <div class="card" style="background:var(--color-surface-2,var(--color-surface)); padding:0.6rem 1rem; margin-bottom:1.25rem;">
       <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.35rem;">
@@ -86,48 +90,6 @@
         <li>Click any node to view full project details including timeline, metrics, and go/no-go gates</li>
       </ul>
     </div>
-
-    <!-- Dependency graph -->
-    <section class="graph-section">
-      <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
-        <h2 style="font-size:1rem; font-weight:600; color:var(--color-text-muted); text-transform:uppercase; letter-spacing:0.08em;">
-          Project Dependency Graph
-        </h2>
-        <span class="text-faint text-xs">Arrows show dependencies (A → B means B requires A)</span>
-      </div>
-
-      <div class="graph-wrapper" id="graph-wrapper">
-        <!-- SVG injected by graph.js -->
-        <div class="zoom-controls">
-          <button class="zoom-btn" id="zoom-in" title="Zoom in">+</button>
-          <button class="zoom-btn" id="zoom-out" title="Zoom out">−</button>
-          <button class="zoom-btn" id="zoom-reset" title="Reset zoom" style="font-size:0.7rem;">⌂</button>
-        </div>
-      </div>
-
-      <!-- Legend -->
-      <div class="graph-legend">
-        <div class="legend-section">
-          <span class="legend-label">Category</span>
-          <span class="legend-item"><span class="legend-rect" style="background:rgba(99,102,241,0.2);border:1.5px solid #6366f1;"></span>Infrastructure</span>
-          <span class="legend-item"><span class="legend-rect" style="background:rgba(16,185,129,0.2);border:1.5px solid #10b981;"></span>Domain</span>
-          <span class="legend-item"><span class="legend-rect" style="background:rgba(245,158,11,0.2);border:1.5px solid #f59e0b;"></span>Accuracy</span>
-          <span class="legend-item"><span class="legend-rect" style="background:rgba(236,72,153,0.2);border:1.5px solid #ec4899;"></span>Usability / Community</span>
-        </div>
-        <div class="legend-section">
-          <span class="legend-label">Effort</span>
-          <span class="legend-item" style="font-size:0.72rem;">👤 S &lt;1 mo</span>
-          <span class="legend-item" style="font-size:0.72rem;">👤👤 M 1–5 mo</span>
-          <span class="legend-item" style="font-size:0.72rem;">👤👤👤 L 6+ mo</span>
-        </div>
-        <div class="legend-section">
-          <span class="legend-label">Status</span>
-          <span class="legend-item"><span class="legend-rect" style="border:1.5px solid #6366f1; background:transparent;"></span>Recommended</span>
-          <span class="legend-item"><span class="legend-dash" style="border-color:#6366f1;"></span>Alternative</span>
-          <span class="legend-item" style="color:var(--color-text-faint);font-size:0.68rem;">Node width = stage span</span>
-        </div>
-      </div>
-    </section>
 
     <!-- Project grid -->
     <section style="margin-top:3rem;">
@@ -147,25 +109,12 @@
   </div>
 </footer>
 
-<!-- Tooltip (shared, positioned by JS) -->
-<div id="graph-tooltip" class="graph-tooltip"></div>
-
 <!-- Scripts -->
-<script src="https://d3js.org/d3.v7.min.js"></script>
 <script type="module">
   import { initTheme } from "./js/theme.js";
-  import { initGraph, zoomIn, zoomOut, zoomReset } from "./js/graph.js";
   initTheme();
   import { PROJECTS, CATEGORIES, STAGE_LABELS, ALL_STAGES } from "./data/projects.js";
   import { totalFTE, latestMilestone, projectURL, MATURITY_LABELS } from "./js/utils.js";
-
-  // Init graph
-  initGraph();
-
-  // Zoom buttons
-  document.getElementById("zoom-in").addEventListener("click", zoomIn);
-  document.getElementById("zoom-out").addEventListener("click", zoomOut);
-  document.getElementById("zoom-reset").addEventListener("click", zoomReset);
 
   // Project grid
   const grid = document.getElementById("project-grid");
