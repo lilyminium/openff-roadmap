@@ -34,10 +34,9 @@ enables: []
 - **Familiarise OpenFF staff with the Presto codebase** in preparation for ongoing support duties — this includes revising documentation and examples, adding tests to improve coverage and confidence, and building internal knowledge of the code's architecture and edge cases
 - Ensure Presto remains compatible with current OpenFF Toolkit and Interchange APIs as these evolve
 - Provide user support for consortium members running bespoke torsion parameterisation workflows
-- Review and update documentation to reflect the current OpenFF ecosystem (Interchange-based system building, current Sage force field versions)
 
 ## Benefits
 
-Bespoke torsion parameterisation — fitting torsion profiles specifically for each ligand rather than relying on generic SMIRKS patterns — is one a popular approach for accuracy improvement in RBFE campaigns. The original BespokeFit demonstrated this clearly.
+Bespoke torsion parameterisation — fitting torsion profiles specifically for each ligand rather than relying on generic SMIRKS patterns — is a popular approach for accuracy improvement in RBFE campaigns. 
 
 BespokeFit accumulated significant technical debt and proved difficult to maintain, with the result that it is now deprecated; Presto is a cleaner, modern update developed by the Cole group. Taking over maintenance ensures this capability remains accessible to consortium members as BespokeFit is retired, without requiring OpenFF to fund new scientific development — the principal cost is infrastructure continuity and user support.

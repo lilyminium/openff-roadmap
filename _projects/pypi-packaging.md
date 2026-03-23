@@ -15,7 +15,7 @@ timeline:
     date: "Q3 2026"
 metrics:
   - "pip install openff-toolkit works without conda for all core use cases (parameterisation, system building, export)"
-  - "AmberTools made optional; core functionality available without it"
+  - "Core functionality available without AmberTools (already optional); users needing AmberTools can install it via conda (or other means)"
   - "CI green on pip-only environments (Linux, macOS) with modern Pythons"
   - "Conda packages derived from PyPI package requirements; conda packaging and dependency management tested and working"
   - "Migration communicated to community via documentation updates, blog post, and Slack/mailing list announcements"
@@ -30,8 +30,7 @@ enables: []
 
 ## Goals
 
-- Make AmberTools an optional dependency invoked only when AMBER-format output or AM1-BCC charges are requested, not required for basic force field loading and parameterisation
-- Publish openff-toolkit and openff-interchange (and any key supporting packages) to PyPI with appropriate version pinning
+- Publish openff-toolkit and openff-interchange (and any key supporting packages) to PyPI with appropriate version pinning. AmberTools is already optional; users who need AM1-BCC charges or sander-based energy/force evaluations can install AmberTools via conda (or other means)
 - **Set up and test conda packaging and dependency management that derives from PyPI package requirements**, automating as much as possible to reduce the maintenance burden of supporting both distribution channels
 - **Communicate the migration to the community** — update documentation, publish a blog post, and announce via Slack and mailing lists so existing users understand the new installation options and any changes to their workflows
 - Update all documentation, tutorials, and workshop materials to list pip as the primary installation method

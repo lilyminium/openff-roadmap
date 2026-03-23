@@ -8,9 +8,10 @@ stages:
   - community_maintenance
 summary: "Coordinate a large-scale collaborative benchmarking exercise with industry partners, evaluating OpenFF force fields on real datasets and revealing key areas of improvement."
 fte:
-  infrastructure: 3
+  infrastructure: 6
   science_code: 0
   science_exp: 0
+  other: 2
 timeline:
   - milestone: "Industry participants confirmed and on board"
     date: "Q3 2026"

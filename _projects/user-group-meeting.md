@@ -7,7 +7,7 @@ stages:
   - community_maintenance
 summary: "Organise a multi-day in-person OpenFF User Group Meeting (UGM) modelled on the RDKit UGM — a community event open to pharma users, academics, and students, focused on direct interaction, talks, perhaps workshops and hackathons."
 fte:
-  infrastructure: 1
+  infrastructure: 1.5
   science_code: 0
   science_exp: 0
   other: 1
@@ -35,7 +35,6 @@ enables: []
 - Organise a 2–3 day in-person OpenFF UGM, modelled on the RDKit UGM format: ~2 days of talks and posters followed by a hackathon day
 - Target a broad audience: **pharma consortium members** (primary audience — industrial users running RBFE campaigns and force field workflows), **academic collaborators** (groups using OpenFF in research), and **students** (graduate students learning computational chemistry tools)
 - Create an open, inclusive atmosphere where users at all career stages can ask questions, share workflows, and connect directly with the OpenFF development team
-- Run a hackathon day, maybe, or workshops
 - Provide a programme of contributed talks from external users, not just from the OpenFF team: hearing how users are actually using the tools is as valuable as hearing from the developers
 
 ## Potential Format (RDKit UGM Model)
@@ -45,7 +44,7 @@ The RDKit UGM has run successfully for over a decade and provides a good templat
 - **Day 1–2**: Talks (20–30 min slots) and lightning talks from OpenFF team members and invited external speakers; poster session; community social
 - **Day 3**: Hackathon — participants self-organise into small groups around proposed topics; groups present outcomes at the end of the day
 - **Remote access**: Live-streamed over video call for remote participants (typically 40–60 remote attendees at RDKit UGM); Discord or Slack for back-channel interaction
-- **Registration**: Low-cost to balance between accessibility and attendance
+- **Registration**: Free (or low-cost) to balance between accessibility and attendance
 
 ## Benefits
 

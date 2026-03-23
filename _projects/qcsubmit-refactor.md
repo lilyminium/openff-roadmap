@@ -12,9 +12,9 @@ fte:
   science_exp: 0
 timeline:
   - milestone: "Audit complete; pain points catalogued; deprecation plan agreed with team and communicated to external users"
-    date: "Q3 2026"
-  - milestone: "Refactored QCSubmit released with streamlined API"
     date: "Q4 2026"
+  - milestone: "Refactored QCSubmit released with streamlined API"
+    date: "Q1 2027"
 metrics:
   - "Scientific workflows can practically use QCSubmit instead of converting to a different format at the earliest opportunity"
 go_no_go:
@@ -28,6 +28,7 @@ enables: []
 - **Remove currently unused API points and behaviours** — strip out defunct dataset types, dead code paths, and features that no longer serve any active workflow
 - **Refactor to match modern QCFractal design patterns** — much of QCSubmit's internal design reflects old QCFractal conventions that no longer exist in the current QCFractal server; aligning with the modern API reduces confusion and eliminates compatibility shims
 - **Improve speed for dataset creation, filtering, and retrieval operations** — current performance is a significant bottleneck for scientists working with large datasets, particularly torsiondrive downloads
+- **Migrate from Pydantic v1 to Pydantic v2** — QCSubmit currently depends on Pydantic v1, which is incompatible with Python 3.14 due to changes in typing internals. This migration is required to keep QCSubmit installable on modern Python versions
 
 ## Benefits
 
