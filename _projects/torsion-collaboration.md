@@ -7,7 +7,7 @@ stages:
   - data_generation
   - fitting
   - benchmarking
-summary: "Collaborate with Thomas Steinbrecher (Genentech) on a dataset of 25,000 informative torsion fragments to identify and fix systematic torsion errors in OpenFF.
+summary: "Collaborate with Thomas Steinbrecher (Genentech) on a dataset of 25,000 informative torsion fragments to identify and fix systematic torsion errors in OpenFF."
 fte:
   infrastructure: 0
   science_code: 1
@@ -24,7 +24,7 @@ timeline:
 metrics:
   - "OpenFF torsion RMSE on the 25k Genentech fragment set reduced"
   - "No regressions on existing Sage torsion benchmark suite"
-go_no_go:
+go_no_go: []
 dependencies:
   - smee-descent
 enables: []

@@ -815,7 +815,7 @@ export const PROJECTS = [
       "fitting",
       "benchmarking"
     ],
-    "summary": "Collaborate with Thomas Steinbrecher (Genentech) on a dataset of 25,000 informative torsion fragments to identify and fix systematic torsion errors in OpenFF. The dataset benchmarks OpenFF 2.3 at 0.91 kcal/mol RMSE — above OPLS4 (0.78) — and highlights specific problem cases where OpenFF errors exceed 3 kcal/mol. The collaboration aims to mine the dataset to expand OpenFF torsion training data and potentially release a targeted torsion improvement, contributing to a joint publication.",
+    "summary": "Collaborate with Thomas Steinbrecher (Genentech) on a dataset of 25,000 informative torsion fragments to identify and fix systematic torsion errors in OpenFF.",
     "fte": {
       "infrastructure": 0.0,
       "science_code": 1.0,
@@ -828,7 +828,7 @@ export const PROJECTS = [
         "date": "Q3 2026"
       },
       {
-        "milestone": "Candidate torsion training data identified from fragment set",
+        "milestone": "Candidate torsion training data generated",
         "date": "Q3 2026"
       },
       {
@@ -836,27 +836,20 @@ export const PROJECTS = [
         "date": "Q4 2026"
       },
       {
-        "milestone": "Genentech paper submitted; OpenFF contribution complete",
+        "milestone": "OpenFF also collabrates on paper",
         "date": "Q1 2027"
       }
     ],
     "metrics": [
-      "OpenFF torsion RMSE on the 25k Genentech fragment set reduced, targeting parity with OPLS4 (≤0.78 kcal/mol)",
-      "Number of fragments with >3 kcal/mol barrier error reduced by at least 50%",
-      "No regressions on existing Sage torsion benchmark suite",
-      "Improved parameters included in a release candidate or a BespokeFit extension file"
+      "OpenFF torsion RMSE on the 25k Genentech fragment set reduced",
+      "No regressions on existing Sage torsion benchmark suite"
     ],
-    "go_no_go": [
-      {
-        "gate": "Q3 2026",
-        "condition": "Root-cause analysis of the >3 kcal/mol problem cases shows a tractable set of SMIRKS patterns that can be addressed by new training data or parameter splitting. If errors are due to functional form limitations (e.g. require CMAP or coupled torsions), descope to a BespokeFit/BespokeFit-expansion workflow rather than a general release."
-      }
-    ],
+    "go_no_go": [],
     "dependencies": [
       "smee-descent"
     ],
     "enables": [],
-    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Review the 25,000-fragment Genentech torsion benchmark dataset alongside Thomas Steinbrecher and confirm which problem cases (&gt;3 kcal/mol error against QM) represent real, relevant chemistry vs. obscure edge cases</li>\n<li>Classify failure modes: identify whether errors are due to missing SMIRKS coverage, poorly constrained existing parameters, or functional form limitations</li>\n<li>Mine the dataset to select high-value fragments for addition to OpenFF torsion training sets, with a focus on MedChem-relevant chemistry where current accuracy is worst</li>\n<li>Refit torsion parameters using the expanded dataset, and validate the improvement against the full 25k benchmark</li>\n<li>Explore whether a BespokeFit expansion file for commonly problematic fragments is a useful deliverable alongside or instead of a general release</li>\n<li>Contribute to Steinbrecher's planned publication with a constructive message: OpenFF is aware of these gaps and has taken steps to address them</li>\n</ul>\n<h2>Context</h2>\n<p>Thomas Steinbrecher (Genentech) developed an automated dihedral fragment generation and validation workflow producing a set of ~25,000 fragments specifically designed to stress-test force field torsion parameters against large-scale QM reference data. Key benchmarking results on this dataset:</p>\n<table>\n<thead>\n<tr>\n<th>Force field</th>\n<th>Torsion RMSE (kcal/mol)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>OpenFF 2.3 (Sage)</td>\n<td>0.91</td>\n</tr>\n<tr>\n<td>OpenFF 2.1</td>\n<td>0.94</td>\n</tr>\n<tr>\n<td>OPLS4 (no custom fitting)</td>\n<td>0.78</td>\n</tr>\n<tr>\n<td>QMML model</td>\n<td>0.40</td>\n</tr>\n</tbody>\n</table>\n<p>Steinbrecher plans to write this up for publication and release the dataset publicly. The collaboration arose from a desire to align on messaging and ideally to improve OpenFF's performance before submission, avoiding a paper that simply criticises OpenFF for known gaps without a path forward.</p>\n<p>There is also an internal Genentech effort to refit some problem fragments using BespokeFit, which may inform which chemistry is highest priority to address.</p>\n<h2>Benefits</h2>\n<p><strong>Real-world MedChem relevance.</strong> The fragment set was curated to be information-rich and includes chemistry that is directly relevant to drug discovery. Failures in this set are not obscure edge cases — they represent the kinds of small molecules that pharma users are running through OpenFF every day.</p>\n<p><strong>A ready-made training and benchmark set.</strong> Rather than generating new QM data from scratch, this collaboration gives OpenFF access to 25,000 validated torsion profiles. The dataset is a substantial expansion of the current torsion training coverage and can be used both to fit parameters and to independently validate them.</p>\n<p><strong>Publication leverage.</strong> Contributing improvements to Steinbrecher's paper positions OpenFF as a collaborator rather than a subject of criticism. It demonstrates that OpenFF is responsive to external benchmarking and actively uses community data to improve.</p>\n<p><strong>Precedent for external dataset partnerships.</strong> This kind of collaboration — an external group generates a benchmark, OpenFF participates in fixing the gaps and co-authoring the study — is a model that could be replicated with other pharma partners. Doing it well here builds the template.</p>"
+    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Classify failure modes: identify whether errors are due to too-general SMIRKS coverage, poorly constrained existing parameters, or other limitations</li>\n<li>Generate and fit to additional data</li>\n<li>Validate the improvement against the 25k benchmark</li>\n<li>Collaborate on publication</li>\n</ul>\n<h2>Benefits</h2>\n<p><strong>Real-world MedChem relevance.</strong> The fragment set was curated by a pharma partner includes chemistry that is directly relevant to drug discovery. Failures in this set are likely not obscure edge cases</p>\n<p><strong>A ready-made benchmark set.</strong> The dataset is a substantial expansion of the current torsion coverage and can offer us direction for targeted improvements.</p>"
   },
   {
     "id": "training-materials",
