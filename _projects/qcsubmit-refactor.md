@@ -7,8 +7,8 @@ stages:
   - infra_updates
 summary: "Refactor QCSubmit to reduce maintenance burden and make it fit for purpose as a daily tool for OpenFF scientists"
 fte:
-  infrastructure: 0.5
-  science_code: 0
+  infrastructure: 1.5
+  science_code: 0.5
   science_exp: 0
 timeline:
   - milestone: "Audit complete; pain points catalogued; deprecation plan agreed with team and communicated to external users"
@@ -24,11 +24,13 @@ enables: []
 
 ## Goals
 
-- Audit QCSubmit codebase for redundancy and pain points
-- Fix these
+- **Add direct export to smee+descent style datasets**, so scientists can go from QCArchive data to the modern fitting stack without manual conversion steps or workarounds
+- **Remove currently unused API points and behaviours** — strip out defunct dataset types, dead code paths, and features that no longer serve any active workflow
+- **Refactor to match modern QCFractal design patterns** — much of QCSubmit's internal design reflects old QCFractal conventions that no longer exist in the current QCFractal server; aligning with the modern API reduces confusion and eliminates compatibility shims
+- **Improve speed for dataset creation, filtering, and retrieval operations** — current performance is a significant bottleneck for scientists working with large datasets, particularly torsiondrive downloads
 
 ## Benefits
 
-**The primary benefit is reduced maintenance burden.** QCSubmit has accumulated substantial legacy functionality — dataset types from defunct workflows, compatibility layers for old QCFractal APIs, and abstraction layers that add complexity without adding value.
+**Reduced maintenance burden.** QCSubmit has accumulated substantial legacy functionality — dataset types from defunct workflows, compatibility layers for old QCFractal APIs, and abstraction layers that add complexity without adding value. Removing dead code and aligning with modern QCFractal patterns will make the codebase significantly easier to maintain and reason about.
 
-**QCSubmit is not currently serving the needs of OpenFF scientists well.** The existing API is slow and painful to use, especially with regards to the smee software stack, where some hacks need to be made to download torsiondrives with speed.
+**A tool scientists can actually use day-to-day.** The existing API is slow and painful to use, especially with the smee software stack, where hacks are currently needed to download torsiondrives with acceptable speed. Adding native smee+descent export and improving performance would make QCSubmit the natural tool for the job rather than something scientists work around.

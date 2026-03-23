@@ -7,7 +7,7 @@ stages:
   - infra_updates
 summary: "Move core OpenFF packages to PyPI with optional AmberTools dependency, drastically lowering the barrier to installation for new users and enabling use in pip-only environments."
 fte:
-  infrastructure: 0.5
+  infrastructure: 1.5
   science_code: 0
   science_exp: 0
 timeline:
@@ -16,7 +16,9 @@ timeline:
 metrics:
   - "pip install openff-toolkit works without conda for all core use cases (parameterisation, system building, export)"
   - "AmberTools made optional; core functionality available without it"
-  - "CI green on pip-only environments (Linux, macOS, Windows) with modern Pythons"
+  - "CI green on pip-only environments (Linux, macOS) with modern Pythons"
+  - "Conda packages derived from PyPI package requirements; conda packaging and dependency management tested and working"
+  - "Migration communicated to community via documentation updates, blog post, and Slack/mailing list announcements"
   - "Installation instructions in all tutorials updated to offer pip as the default path"
   - "Number of unique monthly PyPI downloads tracked as adoption signal post-release"
 go_no_go:
@@ -30,6 +32,8 @@ enables: []
 
 - Make AmberTools an optional dependency invoked only when AMBER-format output or AM1-BCC charges are requested, not required for basic force field loading and parameterisation
 - Publish openff-toolkit and openff-interchange (and any key supporting packages) to PyPI with appropriate version pinning
+- **Set up and test conda packaging and dependency management that derives from PyPI package requirements**, automating as much as possible to reduce the maintenance burden of supporting both distribution channels
+- **Communicate the migration to the community** — update documentation, publish a blog post, and announce via Slack and mailing lists so existing users understand the new installation options and any changes to their workflows
 - Update all documentation, tutorials, and workshop materials to list pip as the primary installation method
 
 ## Benefits

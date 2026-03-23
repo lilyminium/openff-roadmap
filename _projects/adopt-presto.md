@@ -7,7 +7,7 @@ stages:
   - community_maintenance
 summary: "Take over maintenance of Presto (the successor to BespokeFit) from the Cole group, ensuring ongoing user support and ecosystem compatibility for consortium members."
 fte:
-  infrastructure: 1
+  infrastructure: 3
   science_code: 0
   science_exp: 0
   other: 0
@@ -31,6 +31,7 @@ enables: []
 ## Goals
 
 - Accept maintenance responsibility for Presto from the Cole group, including CI infrastructure, PyPI releases, and dependency management
+- **Familiarise OpenFF staff with the Presto codebase** in preparation for ongoing support duties — this includes revising documentation and examples, adding tests to improve coverage and confidence, and building internal knowledge of the code's architecture and edge cases
 - Ensure Presto remains compatible with current OpenFF Toolkit and Interchange APIs as these evolve
 - Provide user support for consortium members running bespoke torsion parameterisation workflows
 - Review and update documentation to reflect the current OpenFF ecosystem (Interchange-based system building, current Sage force field versions)
