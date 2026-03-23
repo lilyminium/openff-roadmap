@@ -6,7 +6,7 @@ recommended: false
 stages:
   - benchmarking
   - community_maintenance
-summary: "Coordinate a large-scale collaborative benchmarking exercise with industry partners, evaluating OpenFF force fields on real datasets."
+summary: "Coordinate a large-scale collaborative benchmarking exercise with industry partners, evaluating OpenFF force fields on real datasets and revealing key areas of improvement."
 fte:
   infrastructure: 3
   science_code: 0

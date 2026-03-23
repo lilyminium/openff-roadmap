@@ -5,7 +5,7 @@ category: infrastructure
 recommended: true
 stages:
   - infra_updates
-summary: "Replace the legacy ForceBalance-based fitting stack with the modern smee and descent libraries, enabling GPU-accelerated gradient-based force field fitting with valence fitting times reduced to ~48 GPU hours and support for co-optimising valence and vdW parameters simultaneously."
+summary: "Replace the legacy ForceBalance-based fitting stack with the modern smee and descent libraries, enabling GPU-accelerated gradient-based force field fitting with valence fitting times reduced to ~48 GPU hours and support for co-optimising valence and vdW parameters simultaneously. We expect this to substantially reduce maintenance burden of our fitting stack."
 fte:
   infrastructure: 2
   science_code: 4
@@ -43,7 +43,5 @@ This is the foundational infrastructure project for OpenFF's next generation of 
 **Lower maintenance burden.** ForceBalance is a complex codebase with a long history that OpenFF does not control.
 
 **Valence fitting time reduced to ~48 GPU hours.** Compared to ForceBalance, which requires multi-day CPU runs for valence fitting, smee/descent achieves the same task in approximately 48 GPU hours by fitting solely to AbInitio targets.
-
-**vdW fitting time not increased.** A key requirement is that the switch to smee/descent does not regress vdW fitting performance. Condensed-phase property fitting (densities, ΔHvap) is the bottleneck for vdW parameters; the smee/descent stack must match or beat ForceBalance on this.
 
 Completing this stack directly unblocks four major downstream science projects: surrogate modelling, co-optimised water model, virtual sites, and data-driven SMIRKS typing.

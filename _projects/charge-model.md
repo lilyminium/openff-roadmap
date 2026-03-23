@@ -9,7 +9,7 @@ stages:
   - fitting
   - benchmarking
   - release
-summary: "Train a next-generation GNN-based partial charge model on modern infrastructure and directly to QM properties. Fit force field parameters with this new force field."
+summary: "Train a next-generation GNN-based partial charge model on modern infrastructure and directly to QM properties, which we expect to improve electrostatics. Fit force field parameters with this new force field."
 fte:
   infrastructure: 1
   science_code: 2

@@ -9,7 +9,7 @@ stages:
   - fitting
   - benchmarking
   - release
-summary: "Support academic collaborators developing Espaloma (continuous, atom-type-free GNN parameterisation), and ensure OpenFF infrastructure can support continuous typing workflows."
+summary: "Support academic collaborators developing Espaloma (enabling continuous typing with GNN parameterisation), and ensure OpenFF infrastructure can support continuous typing workflows."
 fte:
   infrastructure: 2
   science_code: 0

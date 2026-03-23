@@ -6,7 +6,7 @@ recommended: true
 stages:
   - benchmarking
   - release
-summary: "Benchmark SMIRNOFF force field candidates on acyclic and cyclic peptide conformational ensembles and NMR observables, and conditionally release a supported OpenFF peptide force field if performance is sufficient."
+summary: "Benchmark SMIRNOFF force field candidates on peptides, and conditionally release a supported OpenFF peptide force field if performance is sufficient. The key benefits of this project are prototyping the unification of peptide and small molecule parameters for when the protein force field is ready."
 fte:
   infrastructure: 0
   science_code: 0.5
