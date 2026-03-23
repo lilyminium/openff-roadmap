@@ -13,7 +13,7 @@ export const PROJECTS = [
     ],
     "summary": "Take over maintenance of Presto (the successor to BespokeFit) from the Cole group, ensuring ongoing user support and ecosystem compatibility for consortium members.",
     "fte": {
-      "infrastructure": 1.0,
+      "infrastructure": 3.0,
       "science_code": 0.0,
       "science_exp": 0.0,
       "other": 0.0
@@ -42,7 +42,7 @@ export const PROJECTS = [
     ],
     "dependencies": [],
     "enables": [],
-    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Accept maintenance responsibility for Presto from the Cole group, including CI infrastructure, PyPI releases, and dependency management</li>\n<li>Ensure Presto remains compatible with current OpenFF Toolkit and Interchange APIs as these evolve</li>\n<li>Provide user support for consortium members running bespoke torsion parameterisation workflows</li>\n<li>Review and update documentation to reflect the current OpenFF ecosystem (Interchange-based system building, current Sage force field versions)</li>\n</ul>\n<h2>Benefits</h2>\n<p>Bespoke torsion parameterisation — fitting torsion profiles specifically for each ligand rather than relying on generic SMIRKS patterns — is one a popular approach for accuracy improvement in RBFE campaigns. The original BespokeFit demonstrated this clearly.</p>\n<p>BespokeFit accumulated significant technical debt and proved difficult to maintain, with the result that it is now deprecated; Presto is a cleaner, modern update developed by the Cole group. Taking over maintenance ensures this capability remains accessible to consortium members as BespokeFit is retired, without requiring OpenFF to fund new scientific development — the principal cost is infrastructure continuity and user support.</p>"
+    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Accept maintenance responsibility for Presto from the Cole group, including CI infrastructure, PyPI releases, and dependency management</li>\n<li><strong>Familiarise OpenFF staff with the Presto codebase</strong> in preparation for ongoing support duties — this includes revising documentation and examples, adding tests to improve coverage and confidence, and building internal knowledge of the code's architecture and edge cases</li>\n<li>Ensure Presto remains compatible with current OpenFF Toolkit and Interchange APIs as these evolve</li>\n<li>Provide user support for consortium members running bespoke torsion parameterisation workflows</li>\n</ul>\n<h2>Benefits</h2>\n<p>Bespoke torsion parameterisation — fitting torsion profiles specifically for each ligand rather than relying on generic SMIRKS patterns — is a popular approach for accuracy improvement in RBFE campaigns. </p>\n<p>BespokeFit accumulated significant technical debt and proved difficult to maintain, with the result that it is now deprecated; Presto is a cleaner, modern update developed by the Cole group. Taking over maintenance ensures this capability remains accessible to consortium members as BespokeFit is retired, without requiring OpenFF to fund new scientific development — the principal cost is infrastructure continuity and user support.</p>"
   },
   {
     "id": "alcohols-amines",
@@ -94,7 +94,7 @@ export const PROJECTS = [
     ],
     "dependencies": [],
     "enables": [],
-    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Perform systematic error analysis on the performance of current Sage 2.x parameters for alcohols and amines, specifically targeting hydration free energies and conformational torsion profiles</li>\n<li>Identify the specific SMIRKS patterns, torsion dihedral types, and charge model assignments responsible for the largest errors</li>\n<li>Generate targeted QM datasets to fill identified gaps: high-level torsion scans for under-represented OH and NH dihedral types, and extended ESP datasets for partial charge improvement</li>\n<li>Refit the relevant SMIRNOFF torsion and Lennard-Jones parameters using the augmented dataset</li>\n<li>Release as an update to the Sage force field line</li>\n</ul>\n<h2>Benefits</h2>\n<p>Alcohols and amines together represent approximately 60% of drug-like molecules with heteroatom functionality. Known systematic errors in hydration free energies for primary and secondary amines, and in conformational preferences for some alcohol geometries, directly impact binding affinity predictions across a large fraction of drug discovery applications.</p>\n<p>A targeted data-and-fitting approach is more robust than ad-hoc fixes: it addresses the underlying causes of errors rather than patching individual failure cases. The methodology established here also provides a template for applying similar targeted improvements to other functional group classes in future development cycles.</p>"
+    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Perform systematic error analysis on the performance of current Sage 2.x parameters for alcohols and amines, specifically targeting hydration free energies and physical properties</li>\n<li>Re-fit relevant LJ and valence parameters, splitting as necessary.</li>\n<li>Determine general solution, such as re-leasing with updated BCCs or retraining AshGC</li>\n</ul>\n<h2>Benefits</h2>\n<p>Alcohols and amines together represent approximately 60% of drug-like molecules with heteroatom functionality. Known systematic errors in hydration free energies for primary and secondary amines, and in conformational preferences for some alcohol geometries, directly impact binding affinity predictions across a large fraction of drug discovery applications.</p>\n<p>A targeted data-and-fitting approach is more robust than ad-hoc fixes: it addresses the underlying causes of errors rather than patching individual failure cases. The methodology established here also provides a template for applying similar targeted improvements to other functional group classes in future development cycles.</p>"
   },
   {
     "id": "charge-model",
@@ -109,7 +109,7 @@ export const PROJECTS = [
       "benchmarking",
       "release"
     ],
-    "summary": "Train a next-generation GNN-based partial charge model on modern infrastructure and directly to QM properties. Fit force field parameters with this new force field.",
+    "summary": "Train a next-generation GNN-based partial charge model on modern infrastructure and directly to QM properties, which we expect to improve electrostatics. Fit force field parameters with this new force field.",
     "fte": {
       "infrastructure": 1.0,
       "science_code": 2.0,
@@ -145,7 +145,7 @@ export const PROJECTS = [
       },
       {
         "gate": "Q1 2027",
-        "condition": "New charge model shows measurable and statistically significant improvement in independent benchmarks; if improvement is marginal (<5% HFE MAE reduction), reassess training data and model architecture before committing to full force field refit"
+        "condition": "New charge model shows measurable and statistically significant improvement in independent benchmarks"
       }
     ],
     "dependencies": [
@@ -167,7 +167,7 @@ export const PROJECTS = [
       "benchmarking",
       "release"
     ],
-    "summary": "Develop a data-driven approach to generate SMIRKS atom-typing patterns, moving beyond hand-crafted rules to a more systematic typing scheme.",
+    "summary": "Develop a data-driven approach to generate SMIRKS atom-typing patterns, moving beyond hand-crafted rules to a more systematic typing scheme. Current experiments suggest that adding thousands of specific terms, especially torsions, substantially improves the performance of Sage on small molecule benchmarks and does not systematically decrease performance on physical property benchmarks.",
     "fte": {
       "infrastructure": 0.0,
       "science_code": 1.0,
@@ -221,7 +221,7 @@ export const PROJECTS = [
       "benchmarking",
       "release"
     ],
-    "summary": "Support academic collaborators developing Espaloma (continuous, atom-type-free GNN parameterisation), and ensure OpenFF infrastructure can support continuous typing workflows.",
+    "summary": "Support academic collaborators developing Espaloma (enabling continuous typing with GNN parameterisation), and ensure OpenFF infrastructure can support continuous typing workflows.",
     "fte": {
       "infrastructure": 2.0,
       "science_code": 0.0,
@@ -256,12 +256,12 @@ export const PROJECTS = [
       "benchmarking",
       "community_maintenance"
     ],
-    "summary": "Coordinate a large-scale collaborative benchmarking exercise with industry partners, evaluating OpenFF force fields on real datasets.",
+    "summary": "Coordinate a large-scale collaborative benchmarking exercise with industry partners, evaluating OpenFF force fields on real datasets and revealing key areas of improvement.",
     "fte": {
-      "infrastructure": 3.0,
+      "infrastructure": 6.0,
       "science_code": 0.0,
       "science_exp": 0.0,
-      "other": 0.0
+      "other": 2.0
     },
     "timeline": [
       {
@@ -408,8 +408,7 @@ export const PROJECTS = [
       }
     ],
     "metrics": [
-      "Lipid bilayer structural properties (area per lipid, bilayer thickness) ",
-      "NMR order parameters for lipid tails",
+      "Lipid bilayer structural properties (area per lipid, bilayer thickness)",
       "No systematic decrease with Sage 2.x small molecule parameters"
     ],
     "go_no_go": null,
@@ -434,7 +433,7 @@ export const PROJECTS = [
     "fte": {
       "infrastructure": 0.5,
       "science_code": 1.0,
-      "science_exp": 6.0,
+      "science_exp": 7.0,
       "other": 0.0
     },
     "timeline": [
@@ -490,7 +489,7 @@ export const PROJECTS = [
     "go_no_go": [
       {
         "gate": "Q3 2026",
-        "condition": "Assess progress of collaboration with academic groups on continuous typing library. If not ready for use with next-gen charge model, update own NAGL library instead."
+        "condition": "A collaboration is underway to build a new modular typing library for general continuous typing. If this becomes ready in time, port AshGC over to this new library for training and inference. If not, update NAGL instead."
       }
     ],
     "dependencies": [],
@@ -512,7 +511,7 @@ export const PROJECTS = [
     "fte": {
       "infrastructure": 0.0,
       "science_code": 0.0,
-      "science_exp": 0.5,
+      "science_exp": 1.0,
       "other": 0.0
     },
     "timeline": [
@@ -537,10 +536,10 @@ export const PROJECTS = [
       "benchmarking",
       "release"
     ],
-    "summary": "Benchmark SMIRNOFF force field candidates on acyclic and cyclic peptide conformational ensembles and NMR observables, and conditionally release a supported OpenFF peptide force field if performance is sufficient.",
+    "summary": "Benchmark SMIRNOFF force field candidates on peptides, and conditionally release a supported OpenFF peptide force field if performance is sufficient. The key benefits of this project are prototyping the unification of peptide and small molecule parameters for when the protein force field is ready.",
     "fte": {
       "infrastructure": 0.0,
-      "science_code": 0.5,
+      "science_code": 1.0,
       "science_exp": 4.0,
       "other": 0.0
     },
@@ -554,13 +553,12 @@ export const PROJECTS = [
         "date": "Q4 2026"
       },
       {
-        "milestone": "OpenFF Peptide Force Field 1.0 released with benchmark dataset (conditional on performance gate)",
+        "milestone": "Peptide force field released, possibly as Rosemary 3.0 or a Sage 2.x, with benchmark dataset (conditional on performance gate)",
         "date": "Q1 2027"
       }
     ],
     "metrics": [
-      "Good performance on acyclic peptide benchmarks (dipeptide φ/ψ conformational energetics, NMR scalar couplings)",
-      "Good performance on cyclic peptide benchmarks (ring conformational ensembles, folded stability)",
+      "Good performance on a/cyclic peptide benchmarks",
       "Performance on small molecule benchmarks not decreased relative to Sage 2.2",
       "Release workflow documented: process for producing a combined peptide/protein/small molecule force field validated end-to-end",
       "Force field released as .offxml with benchmark data and reproduction scripts"
@@ -568,7 +566,7 @@ export const PROJECTS = [
     "go_no_go": [
       {
         "gate": "Q3 2026",
-        "condition": "At least one SMIRNOFF candidate demonstrates good performance on the peptide benchmark suite for both acyclic and cyclic peptides. If no candidate meets the bar, release does not proceed — benchmarking results are still published."
+        "condition": "At least one SMIRNOFF candidate demonstrates good performance on the peptide benchmark suite for both acyclic and cyclic peptides, including potentially Sage 2.3. If no protein FF candidate achieves good performance, we do not proceed with the rest of the release pipeline."
       },
       {
         "gate": "Q4 2026",
@@ -628,7 +626,7 @@ export const PROJECTS = [
     ],
     "summary": "Move core OpenFF packages to PyPI with optional AmberTools dependency, drastically lowering the barrier to installation for new users and enabling use in pip-only environments.",
     "fte": {
-      "infrastructure": 0.5,
+      "infrastructure": 1.5,
       "science_code": 0.0,
       "science_exp": 0.0,
       "other": 0.0
@@ -641,8 +639,10 @@ export const PROJECTS = [
     ],
     "metrics": [
       "pip install openff-toolkit works without conda for all core use cases (parameterisation, system building, export)",
-      "AmberTools made optional; core functionality available without it",
-      "CI green on pip-only environments (Linux, macOS, Windows) with modern Pythons",
+      "Core functionality available without AmberTools (already optional); users needing AmberTools can install it via conda (or other means)",
+      "CI green on pip-only environments (Linux, macOS) with modern Pythons",
+      "Conda packages derived from PyPI package requirements; conda packaging and dependency management tested and working",
+      "Migration communicated to community via documentation updates, blog post, and Slack/mailing list announcements",
       "Installation instructions in all tutorials updated to offer pip as the default path",
       "Number of unique monthly PyPI downloads tracked as adoption signal post-release"
     ],
@@ -654,7 +654,7 @@ export const PROJECTS = [
     ],
     "dependencies": [],
     "enables": [],
-    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Make AmberTools an optional dependency invoked only when AMBER-format output or AM1-BCC charges are requested, not required for basic force field loading and parameterisation</li>\n<li>Publish openff-toolkit and openff-interchange (and any key supporting packages) to PyPI with appropriate version pinning</li>\n<li>Update all documentation, tutorials, and workshop materials to list pip as the primary installation method</li>\n</ul>\n<h2>Benefits</h2>\n<p>Currently, OpenFF packages are only available via conda, which creates a significant barrier for the large population of Python users who work exclusively in pip environments. This includes data scientists using Google Colab or JupyterHub, developers building Docker images or CI workflows, and users in corporate environments where conda is not available or is prohibited by IT policy.</p>\n<p>PyPI availability dramatically expands OpenFF's accessible user base, enables installation in cloud and container environments without special setup, removes the conda requirement from tutorials and workshops (reducing friction for new learners), and aligns OpenFF with the standard Python packaging ecosystem. Several industrial users have specifically cited the conda-only requirement as a barrier to broader internal adoption.</p>\n<p>RDKit — historically a major conda-only dependency — is now available on PyPI for Linux, macOS, and Windows, removing what was previously the largest blocker.</p>"
+    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Publish openff-toolkit and openff-interchange (and any key supporting packages) to PyPI with appropriate version pinning. AmberTools is already optional; users who need AM1-BCC charges or sander-based energy/force evaluations can install AmberTools via conda (or other means)</li>\n<li><strong>Set up and test conda packaging and dependency management that derives from PyPI package requirements</strong>, automating as much as possible to reduce the maintenance burden of supporting both distribution channels</li>\n<li><strong>Communicate the migration to the community</strong> — update documentation, publish a blog post, and announce via Slack and mailing lists so existing users understand the new installation options and any changes to their workflows</li>\n<li>Update all documentation, tutorials, and workshop materials to list pip as the primary installation method</li>\n</ul>\n<h2>Benefits</h2>\n<p>Currently, OpenFF packages are only available via conda, which creates a significant barrier for the large population of Python users who work exclusively in pip environments. This includes data scientists using Google Colab or JupyterHub, developers building Docker images or CI workflows, and users in corporate environments where conda is not available or is prohibited by IT policy.</p>\n<p>PyPI availability dramatically expands OpenFF's accessible user base, enables installation in cloud and container environments without special setup, removes the conda requirement from tutorials and workshops (reducing friction for new learners), and aligns OpenFF with the standard Python packaging ecosystem. Several industrial users have specifically cited the conda-only requirement as a barrier to broader internal adoption.</p>\n<p>RDKit — historically a major conda-only dependency — is now available on PyPI for Linux, macOS, and Windows, removing what was previously the largest blocker.</p>"
   },
   {
     "id": "qcsubmit-refactor",
@@ -667,19 +667,19 @@ export const PROJECTS = [
     ],
     "summary": "Refactor QCSubmit to reduce maintenance burden and make it fit for purpose as a daily tool for OpenFF scientists",
     "fte": {
-      "infrastructure": 0.5,
-      "science_code": 0.0,
+      "infrastructure": 1.5,
+      "science_code": 1.0,
       "science_exp": 0.0,
       "other": 0.0
     },
     "timeline": [
       {
         "milestone": "Audit complete; pain points catalogued; deprecation plan agreed with team and communicated to external users",
-        "date": "Q3 2026"
+        "date": "Q4 2026"
       },
       {
         "milestone": "Refactored QCSubmit released with streamlined API",
-        "date": "Q4 2026"
+        "date": "Q1 2027"
       }
     ],
     "metrics": [
@@ -688,7 +688,7 @@ export const PROJECTS = [
     "go_no_go": null,
     "dependencies": [],
     "enables": [],
-    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Audit QCSubmit codebase for redundancy and pain points</li>\n<li>Fix these</li>\n</ul>\n<h2>Benefits</h2>\n<p><strong>The primary benefit is reduced maintenance burden.</strong> QCSubmit has accumulated substantial legacy functionality — dataset types from defunct workflows, compatibility layers for old QCFractal APIs, and abstraction layers that add complexity without adding value.</p>\n<p><strong>QCSubmit is not currently serving the needs of OpenFF scientists well.</strong> The existing API is slow and painful to use, especially with regards to the smee software stack, where some hacks need to be made to download torsiondrives with speed.</p>"
+    "body_html": "<h2>Goals</h2>\n<ul>\n<li><strong>Add direct export to smee+descent style datasets</strong>, so scientists can go from QCArchive data to the modern fitting stack without manual conversion steps or workarounds</li>\n<li><strong>Remove currently unused API points and behaviours</strong> — strip out defunct dataset types, dead code paths, and features that no longer serve any active workflow</li>\n<li><strong>Refactor to match modern QCFractal design patterns</strong> — much of QCSubmit's internal design reflects old QCFractal conventions that no longer exist in the current QCFractal server; aligning with the modern API reduces confusion and eliminates compatibility shims</li>\n<li><strong>Improve speed for dataset creation, filtering, and retrieval operations</strong> — current performance is a significant bottleneck for scientists working with large datasets, particularly torsiondrive downloads</li>\n<li><strong>Migrate from Pydantic v1 to Pydantic v2</strong> — QCSubmit currently depends on Pydantic v1, which is incompatible with Python 3.14 due to changes in typing internals. This migration is required to keep QCSubmit installable on modern Python versions</li>\n</ul>\n<h2>Benefits</h2>\n<p><strong>Reduced maintenance burden.</strong> QCSubmit has accumulated substantial legacy functionality — dataset types from defunct workflows, compatibility layers for old QCFractal APIs, and abstraction layers that add complexity without adding value. Removing dead code and aligning with modern QCFractal patterns will make the codebase significantly easier to maintain and reason about.</p>\n<p><strong>A tool scientists can actually use day-to-day.</strong> The existing API is slow and painful to use, especially with the smee software stack, where hacks are currently needed to download torsiondrives with acceptable speed. Adding native smee+descent export and improving performance would make QCSubmit the natural tool for the job rather than something scientists work around.</p>"
   },
   {
     "id": "smee-descent",
@@ -699,26 +699,22 @@ export const PROJECTS = [
     "stages": [
       "infra_updates"
     ],
-    "summary": "Replace the legacy ForceBalance-based fitting stack with the modern smee and descent libraries, enabling GPU-accelerated gradient-based force field fitting with valence fitting times reduced to ~48 GPU hours and support for co-optimising valence and vdW parameters simultaneously.",
+    "summary": "Replace the legacy ForceBalance-based fitting stack with the modern smee and descent libraries, enabling GPU-accelerated gradient-based force field fitting with valence fitting times reduced to ~48 GPU hours and support for co-optimising valence and vdW parameters simultaneously. We expect this to substantially reduce maintenance burden of our fitting stack.",
     "fte": {
       "infrastructure": 2.0,
-      "science_code": 4.0,
+      "science_code": 5.0,
       "science_exp": 2.0,
       "other": 0.0
     },
     "timeline": [
       {
-        "milestone": "Production force field fits migrated to smee/descent; ForceBalance retired",
+        "milestone": "Production force field fits migrated to smee/descent; retire workflows with ForceBalance",
         "date": "Q3 2026"
       }
     ],
     "metrics": [
       "Valence fitting wall-clock time ≤48 GPU hours on standard hardware",
-      "vdW fitting wall-clock time not increased vs ForceBalance baseline on equivalent hardware",
-      "Co-optimisation of valence and vdW parameters demonstrated end-to-end on at least one test force field",
-      "Desired fitting targets implemented",
-      "Regularisation, etc., implemented",
-      "Checkpointing implemented"
+      "vdW fitting wall-clock time not increased vs ForceBalance baseline on equivalent hardware"
     ],
     "go_no_go": null,
     "dependencies": [],
@@ -728,7 +724,7 @@ export const PROJECTS = [
       "virtual-sites",
       "data-driven-smirks"
     ],
-    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Complete the smee condensed-phase property calculation package so that densities, dhmixes, etc etc can be computed as differentiable functions of force field parameters</li>\n<li>Demonstrate and validate <strong>co-optimisation of valence and vdW parameters</strong> simultaneously</li>\n<li>Migrate all active production force field fits from ForceBalance to smee/descent and retire ForceBalance as a hard dependency</li>\n<li>Provide a stable, well-documented Python API that downstream projects (surrogate modelling, water model, virtual sites, data-driven SMIRKS) can build on</li>\n<li>Tutorials for community members</li>\n</ul>\n<h2>Benefits</h2>\n<p>This is the foundational infrastructure project for OpenFF's next generation of force field development.</p>\n<p><strong>Lower maintenance burden.</strong> ForceBalance is a complex codebase with a long history that OpenFF does not control.</p>\n<p><strong>Valence fitting time reduced to ~48 GPU hours.</strong> Compared to ForceBalance, which requires multi-day CPU runs for valence fitting, smee/descent achieves the same task in approximately 48 GPU hours by fitting solely to AbInitio targets.</p>\n<p><strong>vdW fitting time not increased.</strong> A key requirement is that the switch to smee/descent does not regress vdW fitting performance. Condensed-phase property fitting (densities, ΔHvap) is the bottleneck for vdW parameters; the smee/descent stack must match or beat ForceBalance on this.</p>\n<p>Completing this stack directly unblocks four major downstream science projects: surrogate modelling, co-optimised water model, virtual sites, and data-driven SMIRKS typing.</p>"
+    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Complete the smee condensed-phase property calculation package so that densities, dhmixes, etc etc can be computed as differentiable functions of force field parameters</li>\n<li>Demonstrate and validate <strong>co-optimisation of valence and vdW parameters</strong> simultaneously</li>\n<li>Migrate all active production force field fits from ForceBalance to smee/descent and retire ForceBalance as a hard dependency</li>\n<li>Provide a stable, well-documented Python API that downstream projects (surrogate modelling, water model, virtual sites, data-driven SMIRKS) can build on</li>\n<li>Tutorials for community members</li>\n<li>Implement desired fitting targets</li>\n<li>Implement regularisation</li>\n<li>Implement checkpointing</li>\n</ul>\n<h2>Benefits</h2>\n<p>This is the foundational infrastructure project for OpenFF's next generation of force field development.</p>\n<p><strong>Lower maintenance burden.</strong> ForceBalance is a complex codebase with a long history that OpenFF does not control.</p>\n<p><strong>Valence fitting time reduced to ~48 GPU hours.</strong> Compared to ForceBalance, which requires multi-day CPU runs for valence fitting, smee/descent achieves the same task in approximately 48 GPU hours by fitting solely to AbInitio targets.</p>\n<p>Completing this stack directly unblocks four major downstream science projects: surrogate modelling, co-optimised water model, virtual sites, and data-driven SMIRKS typing.</p>"
   },
   {
     "id": "surrogate-modelling",
@@ -791,7 +787,7 @@ export const PROJECTS = [
     "stages": [
       "infra_updates"
     ],
-    "summary": "Consolidate the OpenFF Toolkit and Interchange, move to an RDKit-only backend, remove bond order and charge storage from the Toolkit, and add a tensor representation for direct translation to smee — reducing maintenance burden and aligning the Toolkit with the modern fitting stack.",
+    "summary": "Consolidate the OpenFF Toolkit and Interchange into a single repository — reducing maintenance burden and simplifying the codebase. Optionally, make the main repository RDKit-only (moving OpenEye support to a separate repo) and add a tensor representation for direct translation to smee.",
     "fte": {
       "infrastructure": 3.0,
       "science_code": 0.0,
@@ -799,11 +795,68 @@ export const PROJECTS = [
       "other": 0.0
     },
     "timeline": null,
-    "metrics": null,
+    "metrics": [
+      "Toolkit and Interchange installable from a single package with unified versioning",
+      "OpenEye-dependent functionality maintained in a separate repository; main Toolkit repo CI runs without proprietary licenses"
+    ],
     "go_no_go": null,
     "dependencies": [],
     "enables": [],
-    "body_html": "<h2>Goals</h2>\n<ul>\n<li>integrate repos into a mono-repo</li>\n<li>remove bond orders and charge from Molecule representation</li>\n</ul>\n<h2>Benefits</h2>"
+    "body_html": "<h2>Goals</h2>\n<ul>\n<li><strong>Consolidate Toolkit and Interchange into a mono-repo</strong> with unified versioning, CI, and release process — eliminating cross-repo synchronisation issues and making atomic changes across the parameterisation and system-export stack possible in a single PR. This may also include folding in smaller supporting packages such as openff-utilities, openff-units, and similar minor repos</li>\n<li><em>(Optional)</em> <strong>Make the main Toolkit repository RDKit-only</strong>, moving OpenEye-dependent functionality to a separate repository. This allows external contributors to participate fully — submitting PRs, running CI, and reviewing code — without the headaches of the proprietary OpenEye license restriction, while still maintaining OpenEye support for users who need it</li>\n<li><em>(Optional)</em> <strong>Add a tensor representation</strong> that enables direct translation from parameterised systems to smee tensors, bypassing the current Interchange object model</li>\n</ul>\n<h2>Benefits</h2>\n<p><strong>Reduced maintenance burden.</strong> The Toolkit and Interchange are tightly coupled but currently live in separate repositories, requiring coordinated releases, cross-repo CI, and careful version pinning. Merging them into a mono-repo eliminates this coordination overhead and makes refactoring across the parameterisation boundary straightforward.</p>\n<p><strong>Unblocks external contributions.</strong> The OpenEye backend requires a proprietary license key stored as a CI secret. Because GitHub Actions does not expose secrets to pull requests from forks, PRs from external contributors always fail the OpenEye tests. The only workaround would be granting public write access to the main repository so contributors can push branches directly — which is not acceptable from a security standpoint. This effectively blocks the open-source contribution model for any code that touches cheminformatics. Moving OpenEye support to a separate repository eliminates this problem — the main repo's CI runs without proprietary licenses, so forks work cleanly.</p>\n<p><strong>Faster setup for force field fitting.</strong> Creating smee tensor representations natively will save time when setting up force field fits using large datasets of molecules. Further, this will more tightly integrate the core stack with the fitting stack, creating new opportunities for further optimization.</p>"
+  },
+  {
+    "id": "torsion-collaboration",
+    "title": "Collaborate to improve torsions",
+    "category": "accuracy",
+    "maturity": "early",
+    "recommended": true,
+    "stages": [
+      "data_generation",
+      "fitting",
+      "benchmarking"
+    ],
+    "summary": "Collaborate with Thomas Steinbrecher (Genentech) on a dataset of 25,000 informative torsion fragments to identify and fix systematic torsion errors in OpenFF. The dataset benchmarks OpenFF 2.3 at 0.91 kcal/mol RMSE — above OPLS4 (0.78) — and highlights specific problem cases where OpenFF errors exceed 3 kcal/mol. The collaboration aims to mine the dataset to expand OpenFF torsion training data and potentially release a targeted torsion improvement, contributing to a joint publication.",
+    "fte": {
+      "infrastructure": 0.0,
+      "science_code": 1.0,
+      "science_exp": 3.0,
+      "other": 0.0
+    },
+    "timeline": [
+      {
+        "milestone": "Problem cases reviewed and root causes classified",
+        "date": "Q3 2026"
+      },
+      {
+        "milestone": "Candidate torsion training data identified from fragment set",
+        "date": "Q3 2026"
+      },
+      {
+        "milestone": "Torsion refit validated against full 25k benchmark",
+        "date": "Q4 2026"
+      },
+      {
+        "milestone": "Genentech paper submitted; OpenFF contribution complete",
+        "date": "Q1 2027"
+      }
+    ],
+    "metrics": [
+      "OpenFF torsion RMSE on the 25k Genentech fragment set reduced, targeting parity with OPLS4 (≤0.78 kcal/mol)",
+      "Number of fragments with >3 kcal/mol barrier error reduced by at least 50%",
+      "No regressions on existing Sage torsion benchmark suite",
+      "Improved parameters included in a release candidate or a BespokeFit extension file"
+    ],
+    "go_no_go": [
+      {
+        "gate": "Q3 2026",
+        "condition": "Root-cause analysis of the >3 kcal/mol problem cases shows a tractable set of SMIRKS patterns that can be addressed by new training data or parameter splitting. If errors are due to functional form limitations (e.g. require CMAP or coupled torsions), descope to a BespokeFit/BespokeFit-expansion workflow rather than a general release."
+      }
+    ],
+    "dependencies": [
+      "smee-descent"
+    ],
+    "enables": [],
+    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Review the 25,000-fragment Genentech torsion benchmark dataset alongside Thomas Steinbrecher and confirm which problem cases (&gt;3 kcal/mol error against QM) represent real, relevant chemistry vs. obscure edge cases</li>\n<li>Classify failure modes: identify whether errors are due to missing SMIRKS coverage, poorly constrained existing parameters, or functional form limitations</li>\n<li>Mine the dataset to select high-value fragments for addition to OpenFF torsion training sets, with a focus on MedChem-relevant chemistry where current accuracy is worst</li>\n<li>Refit torsion parameters using the expanded dataset, and validate the improvement against the full 25k benchmark</li>\n<li>Explore whether a BespokeFit expansion file for commonly problematic fragments is a useful deliverable alongside or instead of a general release</li>\n<li>Contribute to Steinbrecher's planned publication with a constructive message: OpenFF is aware of these gaps and has taken steps to address them</li>\n</ul>\n<h2>Context</h2>\n<p>Thomas Steinbrecher (Genentech) developed an automated dihedral fragment generation and validation workflow producing a set of ~25,000 fragments specifically designed to stress-test force field torsion parameters against large-scale QM reference data. Key benchmarking results on this dataset:</p>\n<table>\n<thead>\n<tr>\n<th>Force field</th>\n<th>Torsion RMSE (kcal/mol)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>OpenFF 2.3 (Sage)</td>\n<td>0.91</td>\n</tr>\n<tr>\n<td>OpenFF 2.1</td>\n<td>0.94</td>\n</tr>\n<tr>\n<td>OPLS4 (no custom fitting)</td>\n<td>0.78</td>\n</tr>\n<tr>\n<td>QMML model</td>\n<td>0.40</td>\n</tr>\n</tbody>\n</table>\n<p>Steinbrecher plans to write this up for publication and release the dataset publicly. The collaboration arose from a desire to align on messaging and ideally to improve OpenFF's performance before submission, avoiding a paper that simply criticises OpenFF for known gaps without a path forward.</p>\n<p>There is also an internal Genentech effort to refit some problem fragments using BespokeFit, which may inform which chemistry is highest priority to address.</p>\n<h2>Benefits</h2>\n<p><strong>Real-world MedChem relevance.</strong> The fragment set was curated to be information-rich and includes chemistry that is directly relevant to drug discovery. Failures in this set are not obscure edge cases — they represent the kinds of small molecules that pharma users are running through OpenFF every day.</p>\n<p><strong>A ready-made training and benchmark set.</strong> Rather than generating new QM data from scratch, this collaboration gives OpenFF access to 25,000 validated torsion profiles. The dataset is a substantial expansion of the current torsion training coverage and can be used both to fit parameters and to independently validate them.</p>\n<p><strong>Publication leverage.</strong> Contributing improvements to Steinbrecher's paper positions OpenFF as a collaborator rather than a subject of criticism. It demonstrates that OpenFF is responsive to external benchmarking and actively uses community data to improve.</p>\n<p><strong>Precedent for external dataset partnerships.</strong> This kind of collaboration — an external group generates a benchmark, OpenFF participates in fixing the gaps and co-authoring the study — is a model that could be replicated with other pharma partners. Doing it well here builds the template.</p>"
   },
   {
     "id": "training-materials",
@@ -846,8 +899,8 @@ export const PROJECTS = [
     ],
     "summary": "Organise a multi-day in-person OpenFF User Group Meeting (UGM) modelled on the RDKit UGM — a community event open to pharma users, academics, and students, focused on direct interaction, talks, perhaps workshops and hackathons.",
     "fte": {
-      "infrastructure": 0.0,
-      "science_code": 0.0,
+      "infrastructure": 1.5,
+      "science_code": 1.0,
       "science_exp": 0.0,
       "other": 1.0
     },
@@ -879,7 +932,7 @@ export const PROJECTS = [
     ],
     "dependencies": [],
     "enables": [],
-    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Organise a 2–3 day in-person OpenFF UGM, modelled on the RDKit UGM format: ~2 days of talks and posters followed by a hackathon day</li>\n<li>Target a broad audience: <strong>pharma consortium members</strong> (primary audience — industrial users running RBFE campaigns and force field workflows), <strong>academic collaborators</strong> (groups using OpenFF in research), and <strong>students</strong> (graduate students learning computational chemistry tools)</li>\n<li>Create an open, inclusive atmosphere where users at all career stages can ask questions, share workflows, and connect directly with the OpenFF development team</li>\n<li>Run a hackathon day, maybe, or workshops</li>\n<li>Provide a programme of contributed talks from external users, not just from the OpenFF team: hearing how users are actually using the tools is as valuable as hearing from the developers</li>\n</ul>\n<h2>Potential Format (RDKit UGM Model)</h2>\n<p>The RDKit UGM has run successfully for over a decade and provides a good template:</p>\n<ul>\n<li><strong>Day 1–2</strong>: Talks (20–30 min slots) and lightning talks from OpenFF team members and invited external speakers; poster session; community social</li>\n<li><strong>Day 3</strong>: Hackathon — participants self-organise into small groups around proposed topics; groups present outcomes at the end of the day</li>\n<li><strong>Remote access</strong>: Live-streamed over video call for remote participants (typically 40–60 remote attendees at RDKit UGM); Discord or Slack for back-channel interaction</li>\n<li><strong>Registration</strong>: Low-cost to balance between accessibility and attendance</li>\n</ul>\n<h2>Benefits</h2>\n<p><strong>Direct user contact is irreplaceable.</strong> There are things that pharma users will say in person — workflow frustrations, feature requests, concerns about accuracy or reliability — that they will not file as GitHub issues or raise on Slack. The UGM provides a structured space for this feedback, and the direct human relationship between developers and users builds the kind of trust that sustains long-term consortium membership.</p>\n<p><strong>Reaching pharma users specifically.</strong> Consortium members are the primary audience because they fund OpenFF and their needs should drive the roadmap. Industrial scientists are often constrained about what they can share publicly; in-person conversations at a community meeting allow much more candid discussion than open GitHub issues or public forums.</p>\n<p><strong>Students and academics as future users.</strong> Students who learn OpenFF at a UGM become the next generation of users and contributors. Academic groups who feel connected to the community are more likely to contribute datasets, methods, and code. The RDKit UGM actively cultivates this: accessible pricing and a welcoming programme structure ensures that PhD students and postdocs attend alongside senior industry scientists.</p>\n<p><strong>Hackathon as direct productivity.</strong> The hackathon day produces tangible outputs: documentation improvements, bug fixes, new tutorial notebooks. It also onboards new contributors in a low-stakes environment where they have immediate expert support. Several RDKit UGM hackathon contributions have made it into production releases.</p>\n<p><strong>Community identity.</strong> OpenFF is a distributed project — staff, consortium members, and academic collaborators rarely meet in person. The UGM reinforces that OpenFF is a community, not just a software product, which matters for long-term engagement and membership retention.</p>"
+    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Organise a 2–3 day in-person OpenFF UGM, modelled on the RDKit UGM format: ~2 days of talks and posters followed by a hackathon day</li>\n<li>Target a broad audience: <strong>pharma consortium members</strong> (primary audience — industrial users running RBFE campaigns and force field workflows), <strong>academic collaborators</strong> (groups using OpenFF in research), and <strong>students</strong> (graduate students learning computational chemistry tools)</li>\n<li>Create an open, inclusive atmosphere where users at all career stages can ask questions, share workflows, and connect directly with the OpenFF development team</li>\n<li>Provide a programme of contributed talks from external users, not just from the OpenFF team: hearing how users are actually using the tools is as valuable as hearing from the developers</li>\n</ul>\n<h2>Potential Format (RDKit UGM Model)</h2>\n<p>The RDKit UGM has run successfully for over a decade and provides a good template:</p>\n<ul>\n<li><strong>Day 1–2</strong>: Talks (20–30 min slots) and lightning talks from OpenFF team members and invited external speakers; poster session; community social</li>\n<li><strong>Day 3</strong>: Hackathon — participants self-organise into small groups around proposed topics; groups present outcomes at the end of the day</li>\n<li><strong>Remote access</strong>: Live-streamed over video call for remote participants (typically 40–60 remote attendees at RDKit UGM); Discord or Slack for back-channel interaction</li>\n<li><strong>Registration</strong>: Free (or low-cost) to balance between accessibility and attendance</li>\n</ul>\n<h2>Benefits</h2>\n<p><strong>Direct user contact is irreplaceable.</strong> There are things that pharma users will say in person — workflow frustrations, feature requests, concerns about accuracy or reliability — that they will not file as GitHub issues or raise on Slack. The UGM provides a structured space for this feedback, and the direct human relationship between developers and users builds the kind of trust that sustains long-term consortium membership.</p>\n<p><strong>Reaching pharma users specifically.</strong> Consortium members are the primary audience because they fund OpenFF and their needs should drive the roadmap. Industrial scientists are often constrained about what they can share publicly; in-person conversations at a community meeting allow much more candid discussion than open GitHub issues or public forums.</p>\n<p><strong>Students and academics as future users.</strong> Students who learn OpenFF at a UGM become the next generation of users and contributors. Academic groups who feel connected to the community are more likely to contribute datasets, methods, and code. The RDKit UGM actively cultivates this: accessible pricing and a welcoming programme structure ensures that PhD students and postdocs attend alongside senior industry scientists.</p>\n<p><strong>Hackathon as direct productivity.</strong> The hackathon day produces tangible outputs: documentation improvements, bug fixes, new tutorial notebooks. It also onboards new contributors in a low-stakes environment where they have immediate expert support. Several RDKit UGM hackathon contributions have made it into production releases.</p>\n<p><strong>Community identity.</strong> OpenFF is a distributed project — staff, consortium members, and academic collaborators rarely meet in person. The UGM reinforces that OpenFF is a community, not just a software product, which matters for long-term engagement and membership retention.</p>"
   },
   {
     "id": "virtual-sites",
@@ -893,7 +946,7 @@ export const PROJECTS = [
       "benchmarking",
       "release"
     ],
-    "summary": "Develop and release a SMIRNOFF force field incorporating virtual sites to better capture sigma holes, lone pairs on nitrogen, and other anisotropic electrostatic features.",
+    "summary": "Develop and release a SMIRNOFF force field incorporating virtual sites to better capture sigma holes, lone pairs on nitrogen, and other anisotropic electrostatic features. This has been tried previously, but we have since made substantial updates to our workflows and found errors in the data we were training with.",
     "fte": {
       "infrastructure": 0.5,
       "science_code": 1.0,
@@ -981,7 +1034,7 @@ export const PROJECTS = [
       "smee-descent"
     ],
     "enables": [],
-    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Implement and validate the smee/descent condensed-phase fitting pipeline for water property calculations (density, dielectric constant, heat of vaporisation)</li>\n<li>Co-optimise a water model alongside OpenFF small molecule Lennard-Jones parameters, ensuring water-solute cross-interactions are balanced against pure-water properties</li>\n<li>Fit against a training set covering pure water properties across the biomolecularly relevant temperature range and mixture properties with drug-like fragments</li>\n<li>Release the co-optimised water model as an officially supported OpenFF component, packaged alongside an updated Sage force field</li>\n<li>Document the fitting workflow and architecture choices to facilitate a future upgrade to a 4-site model</li>\n</ul>\n<h2>Benefits</h2>\n<p>The choice of water model is one of the largest single sources of systematic error in solvation free energies and condensed-phase properties. OpenFF currently relies on TIP3P by convention — a model with well-documented limitations including an overestimated dielectric constant, incorrect diffusion coefficient, and suboptimal water-solute interactions for polar functional groups. As of Sage 2.3, there is concern we have over-fit our vdW to correct for TIP3P's deficiencies.</p>\n<p>A co-optimised water model addresses these issues at the source rather than compensating for them with solute parameter adjustments. Improving mixture properties (enthalpies of mixing, mixture densities) is particularly important for accurately representing solvated drug-like systems. This work builds on collaboration with the Shirts lab and connects directly to the ion parameters project.</p>\n<p>The current cycle targets a 3-site architecture (tractable with current infrastructure); documenting the workflow to enable a future 4-site model (e.g. TIP4P-like, with an off-atom charge site) keeps that upgrade path open for the next development cycle, once virtual site infrastructure is in place.</p>"
+    "body_html": "<h2>Goals</h2>\n<ul>\n<li>Fit to additional data from NIST, in collaboration with ThermoML team</li>\n<li>Implement and validate the smee/descent condensed-phase fitting pipeline for water property calculations (density, dielectric constant, heat of vaporisation)</li>\n<li>Co-optimise a water model alongside OpenFF small molecule Lennard-Jones parameters, ensuring water-solute cross-interactions are balanced against pure-water properties</li>\n<li>Fit against a training set covering pure water properties across the biomolecularly relevant temperature range and mixture properties with drug-like fragments</li>\n<li>Release the co-optimised water model as an officially supported OpenFF component, packaged alongside an updated Sage force field</li>\n<li>Document the fitting workflow and architecture choices to facilitate a future upgrade to a 4-site model</li>\n</ul>\n<h2>Benefits</h2>\n<p>The choice of water model is one of the largest single sources of systematic error in solvation free energies and condensed-phase properties. OpenFF currently relies on TIP3P by convention — a model with well-documented limitations including an overestimated dielectric constant, incorrect diffusion coefficient, and suboptimal water-solute interactions for polar functional groups. As of Sage 2.3, there is concern we have over-fit our vdW to correct for TIP3P's deficiencies.</p>\n<p>A co-optimised water model addresses these issues at the source rather than compensating for them with solute parameter adjustments. Improving mixture properties (enthalpies of mixing, mixture densities) is particularly important for accurately representing solvated drug-like systems. This work builds on collaboration with the Shirts lab and connects directly to the ion parameters project.</p>\n<p>The current cycle targets a 3-site architecture (tractable with current infrastructure); documenting the workflow to enable a future 4-site model (e.g. TIP4P-like, with an off-atom charge site) keeps that upgrade path open for the next development cycle, once virtual site infrastructure is in place.</p>"
   }
 ];
 
