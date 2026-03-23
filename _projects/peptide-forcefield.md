@@ -9,7 +9,7 @@ stages:
 summary: "Benchmark SMIRNOFF force field candidates on peptides, and conditionally release a supported OpenFF peptide force field if performance is sufficient. The key benefits of this project are prototyping the unification of peptide and small molecule parameters for when the protein force field is ready."
 fte:
   infrastructure: 0
-  science_code: 0.5
+  science_code: 1
   science_exp: 4
 timeline:
   - milestone: "Peptide benchmark suite finalised covering acyclic and cyclic peptides; initial results on Gilson-lab SMIRNOFF candidates computed"

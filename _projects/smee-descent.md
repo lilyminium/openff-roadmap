@@ -8,7 +8,7 @@ stages:
 summary: "Replace the legacy ForceBalance-based fitting stack with the modern smee and descent libraries, enabling GPU-accelerated gradient-based force field fitting with valence fitting times reduced to ~48 GPU hours and support for co-optimising valence and vdW parameters simultaneously. We expect this to substantially reduce maintenance burden of our fitting stack."
 fte:
   infrastructure: 2
-  science_code: 4
+  science_code: 5
   science_exp: 2
 timeline:
   - milestone: "Production force field fits migrated to smee/descent; retire workflows with ForceBalance"

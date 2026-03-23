@@ -8,7 +8,7 @@ stages:
 summary: "Organise a multi-day in-person OpenFF User Group Meeting (UGM) modelled on the RDKit UGM — a community event open to pharma users, academics, and students, focused on direct interaction, talks, perhaps workshops and hackathons."
 fte:
   infrastructure: 1.5
-  science_code: 0
+  science_code: 1
   science_exp: 0
   other: 1
 timeline:

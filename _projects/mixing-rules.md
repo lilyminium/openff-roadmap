@@ -13,7 +13,7 @@ summary: "Investigate and potentially adopt non-Lorentz-Berthelot mixing rules f
 fte:
   infrastructure: 0.5
   science_code: 1
-  science_exp: 6
+  science_exp: 7
 timeline:
   - milestone: "SMIRNOFF and OpenMM/OpenFF Interchange infrastructure support for alternative mixing rules"
     date: "Q3 2026"

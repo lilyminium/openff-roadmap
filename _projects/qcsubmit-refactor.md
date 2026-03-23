@@ -8,7 +8,7 @@ stages:
 summary: "Refactor QCSubmit to reduce maintenance burden and make it fit for purpose as a daily tool for OpenFF scientists"
 fte:
   infrastructure: 1.5
-  science_code: 0.5
+  science_code: 1
   science_exp: 0
 timeline:
   - milestone: "Audit complete; pain points catalogued; deprecation plan agreed with team and communicated to external users"

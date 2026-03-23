@@ -9,7 +9,7 @@ summary: "Generate high-quality quantum chemistry datasets for nucleic acid frag
 fte:
   infrastructure: 0
   science_code: 0
-  science_exp: 0.5
+  science_exp: 1
 timeline:
   - milestone: "Dataset planned and submitted"
     date: "Q1 2027"
