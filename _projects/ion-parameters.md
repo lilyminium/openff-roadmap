@@ -28,7 +28,7 @@ enables: []
 
 ## Goals
 
-- Implement ion radial distribution function (RDF) and osmotic coefficient fitting targets in the OpenFF fitting infrastructure; these are necessary to produce transferable ion parameters that behave correctly at finite salt concentrations, not just in dilute limit
+- Implement ion radial distribution function (RDF) and osmotic coefficient fitting targets in the OpenFF fitting infrastructure
 - Support collaborators in developing ion parameters with a co-optimised water model
 
 ## Benefits
