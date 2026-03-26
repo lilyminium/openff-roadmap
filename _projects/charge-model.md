@@ -48,6 +48,6 @@ enables: []
 
 ## Benefits
 
-Partial charges dominate electrostatic contributions to binding and solvation. The current AshGC charge model yields charges of AM1-BCC quality and performs competitively on benchmark sets. However, it has inherited the flaws of AM1-BCC, is limited in chemical space coverage, and the training process depends on DGL infrastructure that is being replaced.
+The current AshGC charge model yields charges of AM1-BCC quality and performs competitively on benchmark sets. However, it has inherited the flaws of AM1-BCC, is limited in chemical space coverage, and the training process depends on DGL infrastructure that is being replaced.
 
 A next-generation model trained on a larger, more diverse dataset with a modern architecture would improve performance and simplify downstream porting outside Python.

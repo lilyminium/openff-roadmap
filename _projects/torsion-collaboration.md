@@ -40,6 +40,6 @@ enables: []
 
 ## Benefits
 
-**Real-world MedChem relevance.** The fragment set was curated by a pharma partner includes chemistry that is directly relevant to drug discovery. Failures in this set are likely not obscure edge cases
+**Real-world MedChem relevance.** The fragment set was curated by a pharma partner includes chemistry that is directly relevant to drug discovery. Failures in this set are likely not obscure edge cases. Improvements in this area are likely to have real impact for our users.
 
 **A ready-made benchmark set.** The dataset is a substantial expansion of the current torsion coverage and can offer us direction for targeted improvements.

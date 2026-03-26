@@ -34,5 +34,5 @@ enables: []
 
 ## Benefits
 
-A supported protein force field is one of the most consistently requested capabilities from OpenFF's industrial and academic user base. Having both protein and small molecule parameters under the same SMIRNOFF framework — rather than a patchwork of AMBER proteins + OpenFF ligands — provides a uniquely consistent treatment for protein-ligand systems and simplifies simulation setup substantially.
+A supported co-optimized small molecule and protein force field is one of the most consistently requested capabilities from OpenFF's industrial and academic user base. Having both protein and small molecule parameters under the same SMIRNOFF framework — rather than a patchwork of AMBER proteins + OpenFF ligands — provides a uniquely consistent treatment for protein-ligand systems and simplifies simulation setup substantially.
 

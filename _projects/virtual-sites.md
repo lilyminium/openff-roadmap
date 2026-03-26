@@ -34,8 +34,8 @@ enables: []
 
 ## Goals
 
-- A prototype virtual site force field addressing sigma holes and pyridine lone pair without worse performnance on physical properties
+- A prototype virtual site force field addressing sigma holes and pyridine lone pair without worse performance on physical properties
 
 ## Benefits
 
-Virtual sites allow more complex treatments of electrostatic interactions.
+Virtual sites allow more complex treatments of electrostatic interactions, especially in places where the QM ESP is anisotropic and cannot be well represented by a single atom-centered partial charge. We hypothesize this will fix systematic errors in certain regions of chemistry, such as enthalpies of mixing between pyridine and other compounds, and be important in directional applications such as binding sites for RBFEs.

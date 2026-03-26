@@ -38,4 +38,4 @@ enables: []
 
 Lipid membranes are central to many drug discovery contexts: membrane permeability, membrane protein binding, and lipid nanoparticle formulation all require reliable lipid force fields. Currently, OpenFF users studying membrane systems must use parameters from other force field families.
 
-Work by the Shirts lab has shown that existing lipid parameters compatible with TIP3P water show known deficiencies in NMR order parameters and lateral diffusion for some lipid types. Co-optimised lipid parameters developed alongside OpenFF's water model and small molecule parameters should address these systematically, providing a self-consistent treatment for membrane simulations.
+Work by the Shirts lab has shown that existing Sage parameters show  deficiencies in benchmarks such as NMR order parameters and lateral diffusion. Co-optimised lipid parameters developed alongside OpenFF's water model and small molecule parameters should address these systematically, providing a self-consistent treatment for membrane simulations.

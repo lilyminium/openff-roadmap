@@ -37,7 +37,7 @@ enables: []
 ## Goals
 
 - Fit to additional data from NIST, in collaboration with ThermoML team
-- Implement and validate the smee/descent condensed-phase fitting pipeline for water property calculations (density, dielectric constant, heat of vaporisation)
+- Implement and validate the smee/descent condensed-phase fitting pipeline for water property calculations (density, dielectric constant, heat of vaporisation) and mixture properties (densities, heats of mixing)
 - Co-optimise a water model alongside OpenFF small molecule Lennard-Jones parameters, ensuring water-solute cross-interactions are balanced against pure-water properties
 - Fit against a training set covering pure water properties across the biomolecularly relevant temperature range and mixture properties with drug-like fragments
 - Release the co-optimised water model as an officially supported OpenFF component, packaged alongside an updated Sage force field

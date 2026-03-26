@@ -35,12 +35,12 @@ enables: []
 
 ## Goals
 
-- Perform systematic error analysis on the performance of current Sage 2.x parameters for alcohols and amines, specifically targeting hydration free energies and physical properties
+- Perform systematic error analysis on the performance of current Sage 2.x parameters for alcohols and amines, specifically targeting solvation free energies and physical properties
 - Re-fit relevant LJ and valence parameters, splitting as necessary.
-- Determine general solution, such as re-leasing with updated BCCs or retraining AshGC
+- Determine general solution, such as releasing with updated BCCs or retraining AshGC
 
 ## Benefits
 
-Alcohols and amines together represent approximately 60% of drug-like molecules with heteroatom functionality. Known systematic errors in hydration free energies for primary and secondary amines, and in conformational preferences for some alcohol geometries, directly impact binding affinity predictions across a large fraction of drug discovery applications.
+Alcohols and amines are important functional groups, but recent experiments and close inspection of performance with water has indicated poor performance with physical properties (densities and enthalpies of mixing). We propose to spend specific effort improving this area, particularly focusing on nonbonded parameters.
 
 A targeted data-and-fitting approach is more robust than ad-hoc fixes: it addresses the underlying causes of errors rather than patching individual failure cases. The methodology established here also provides a template for applying similar targeted improvements to other functional group classes in future development cycles.
